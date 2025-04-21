@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechSpark 2025 Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .form-card h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #34495e;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dcdfe6;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #5d9cec;
+      box-shadow: 0 0 0 2px rgba(93, 156, 236, 0.2);
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 8px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .submit-btn {
+      background: #5d9cec;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #4a89dc;
+    }
+
+    @media (max-width: 600px) {
+      .form-card {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2>TechSpark 2025 – Registration Form</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="college">College Name</label>
+        <input type="text" id="college" name="college" required>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department" required>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year of Study</label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female" required> Female</label>
+          <label><input type="radio" name="gender" value="Other" required> Other</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Select Events</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="events" value="Hackathon"> Hackathon</label>
+          <label><input type="checkbox" name="events" value="Paper Presentation"> Paper Presentation</label>
+          <label><input type="checkbox" name="events" value="Workshops"> Workshops</label>
+          <label><input type="checkbox" name="events" value="Tech Quiz"> Tech Quiz</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Accommodation Needed?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="accommodation" value="Yes" required> Yes</label>
+          <label><input type="radio" name="accommodation" value="No" required> No</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="payment_proof">Upload Payment Proof</label>
+        <input type="file" id="payment_proof" name="payment_proof" accept=".jpg,.jpeg,.png,.pdf" required>
+      </div>
+
+      <div class="form-group">
+        <label for="emergency">Emergency Contact</label>
+        <input type="tel" id="emergency" name="emergency_contact" required>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments" rows="3" placeholder="Any special requirements or questions..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Registration</button>
+    </form>
+  </div>
+
+</body>
+</html>

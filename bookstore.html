@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Haven</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #212121;
+      color: white;
+      padding-top: 60px;
+      transition: left 0.3s;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 25px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #424242;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: #3949ab;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 0;
+      padding: 60px 20px 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar.active ~ .main {
+      margin-left: 250px;
+    }
+
+    .book-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .book-card {
+      background: white;
+      width: 220px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #3949ab;
+      text-align: center;
+    }
+
+    .book-card p {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+
+    .price {
+      margin: 8px 0;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .add-to-cart {
+      margin-top: auto;
+      padding: 8px 16px;
+      background-color: #3949ab;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #303f9f;
+    }
+
+    @media (max-width: 768px) {
+      .book-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Fiction</a>
+    <a href="#">Non-Fiction</a>
+    <a href="#">Sci-Fi</a>
+    <a href="#">Biographies</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span class="menu-icon" onclick="toggleSidebar()">☰</span>
+    <div class="logo">📚 Book Haven</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="book-list">
+      <!-- Book 1 -->
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Book 1">
+        <h3>The Silent Patient</h3>
+        <p>A thrilling psychological mystery.</p>
+        <div class="price">$12.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1544716278-e513176f20b5" alt="Book 2">
+        <h3>Atomic Habits</h3>
+        <p>Small habits, big results.</p>
+        <div class="price">$9.49</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnY0RbplO3HkABg3UVMIT_ppJbhcPCrZvYShKwXgk8-xP5wczphauQnU67sKneVvPD8O8&usqp=CAU" alt="Book 3">
+        <h3>1984</h3>
+        <p>Orwell’s dystopian masterpiece.</p>
+        <div class="price">$10.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book 4">
+        <h3>To Kill a Mockingbird</h3>
+        <p>A timeless classic about justice.</p>
+        <div class="price">$8.75</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Book 5 -->
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1551024739-78e6fd19ed87" alt="Book 5">
+        <h3>The Alchemist</h3>
+        <p>A journey of self-discovery.</p>
+        <div class="price">$11.30</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Book 6 -->
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" alt="Book 6">
+        <h3>Becoming</h3>
+        <p>Michelle Obama's inspiring story.</p>
+        <div class="price">$13.60</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book 4">
+        <h3>To Kill a Mockingbird</h3>
+        <p>A timeless classic about justice.</p>
+        <div class="price">$8.75</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXlrOnc51o50nXIfxsqHpsGr19xeoSHk_ovv3SqzRgDgAYpSGetUNKFvyQvJcsy8jVrac&usqp=CAU" alt="Book 4">
+        <h3>To Kill a Mockingbird</h3>
+        <p>A timeless classic about justice.</p>
+        <div class="price">$8.75</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
